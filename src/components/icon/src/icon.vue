@@ -1,16 +1,34 @@
 <template>
-    <div>
-        <svg class="f-icon" aria-hidden="true" :style="`color:${color}`">
+        <svg class="f-icon" :class="loadingClass" aria-hidden="true" :style="`color:${color}`">
             <use :xlink:href="`#icon-${name}`"></use>
         </svg>
-    </div>
 </template>
 
 <script>
     import './iconfont'
     export default {
         name:'f-icon',
-        props:['name','color']
+        props:{
+            'name':{
+                type:String,
+                default:'',
+            },
+            'color':{
+                type:String,
+                default:''
+            },
+            'loading':{
+                type:Boolean,
+                default:false
+            }
+        },
+        computed:{
+            loadingClass(){
+                if(this.loading){
+                    return 'loading'
+                }
+            }
+        }
     }
 </script>
 

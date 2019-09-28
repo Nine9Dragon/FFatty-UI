@@ -15,8 +15,8 @@
         <l-button round>defalut</l-button>
         <l-button type="primary" round>primary</l-button>
         <l-button type="success" round>success</l-button>
-        <l-button type="danger" round>danger</l-button>
-        <l-button type="warning"  round @click="change">warning</l-button>
+        <l-button type="danger" round icon="mima" iconPositon="right">danger</l-button>
+        <l-button icon="jiazai" loading type="warning"  round @click="change" iconPositon="right">warning</l-button>
         <hr>
         <l-button disabled>defalut</l-button>
         <l-button type="primary" disabled>primary</l-button>
@@ -24,7 +24,7 @@
         <l-button type="danger" disabled>danger</l-button>
         <l-button type="warning"  disabled>warning</l-button>
         <hr>
-        <f-icon name="shoucang" color="#FAA"></f-icon>
+        <f-icon name="jiazai" color="#FAA" loading></f-icon>
     </div>
 </template>
 

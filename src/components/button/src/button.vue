@@ -1,11 +1,17 @@
 <template>
     <button class="btn" @click="$emit('click')" :class="btnClass" :disabled="disabled">
+        <f-icon v-if="icon && !loading" :name="icon" class="f-icon"  ></f-icon>
+        <f-icon v-if="loading" name="jiazai" class="f-icon loading"></f-icon>
         <slot></slot>
     </button>
 </template>
 
 <script>
+    import icon from '../../icon/src/icon'
     export default {
+        components: {
+            'f-icon': icon
+        },
         props:{
             'type':{
                 type:String,
@@ -24,6 +30,20 @@
             'disabled':{
                 type:Boolean,
                 default:false
+            },
+            'loading':{
+                type:Boolean,
+                default:false
+            },
+            'icon':{
+                type:String
+            },
+            'iconPositon':{
+                type:String,
+                default:'left',
+                validator:function(val){
+                    return val === 'left' || val === 'right'
+                }
             }
         },
         computed:{
@@ -40,6 +60,9 @@
                 }
                 if(this.disabled){
                     classList.push('disabled')
+                }
+                if(this.iconPositon){
+                    classList.push('icon-'+this.iconPositon)
                 }
                 return classList.join(" ");
             }
@@ -146,5 +169,18 @@
 
     .is-round{
         border-radius: 25px;
+    }
+    .icon-left{
+        >.f-icon{
+            margin-top:1px;
+            margin-right: .4rem;
+        }
+    }
+    .icon-right{
+        >.f-icon{
+            margin-top:1px;
+            float: right;
+            margin-left: .4rem;
+        }
     }
 </style>
