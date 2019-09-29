@@ -25,16 +25,35 @@
         <l-button type="warning"  disabled>warning</l-button>
         <hr>
         <f-icon name="jiazai" color="#FAA" loading></f-icon>
+        <hr>
+        <f-layout height="400">
+            <f-sider width="200">sider</f-sider>
+            <f-layout>
+                <f-header>header</f-header>
+                <f-content>content</f-content>
+                <f-footer height="100">footer</f-footer>
+            </f-layout>
+        </f-layout>
     </div>
 </template>
 
 <script>
     import Button from "./button/src/button"
     import Icon from "./icon/src/icon"
+    import sHeader from './Container/header'
+    import sFooter from './Container/footer'
+    import sContent from './Container/content'
+    import sLayout from './Container/layout'
+    import sSider from './Container/sider'
     export default {
         components:{
             "l-button":Button,
-            "f-icon":Icon
+            "f-icon":Icon,
+            "f-header":sHeader,
+            "f-footer":sFooter,
+            "f-content":sContent,
+            "f-layout":sLayout,
+            "f-sider":sSider
         },
         methods:{
             aa(){
@@ -49,8 +68,8 @@
 
 <style lang="less" scoped>
     div{
-        width: 100%;
-        height: 300px;
+        // width: 100%;
+        // height: 300px;
         background-color: #aaa;
     }
 </style>
