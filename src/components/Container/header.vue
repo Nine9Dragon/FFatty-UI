@@ -10,12 +10,12 @@
         props:{
             'height':{
                 type:[Number,String],
-                default:'60'
+                default:'60px'
             }
         },
         computed:{
             headerHeight(){
-                let value = 'height:'+this.height+'px';
+                let value = 'height:'+this.height;
                 return value
             }
         }

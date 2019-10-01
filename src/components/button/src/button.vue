@@ -98,6 +98,9 @@
         &:hover{
             opacity: .7;
         }
+        &:active{
+            opacity: 1;
+        }
         
     }
     .btn-success{
@@ -107,6 +110,9 @@
         &:hover{
             opacity: .7;
         }
+        &:active{
+            opacity: 1;
+        }
     }
     .btn-warning{
         border-color: @warningColor;
@@ -114,6 +120,9 @@
         color: @white;
         &:hover{
             opacity: .7;
+        }
+        &:active{
+            opacity: 1;
         }
     }
     .btn-primary{
@@ -123,6 +132,9 @@
         &:hover{
             opacity: .7;
         }
+        &:active{
+            opacity: 1;
+        }
     }
 
     .danger-plain{
@@ -131,8 +143,12 @@
         color: @dangerColor;
         &:hover{
             background-color: @dangerColor;
+            border-color:@dangerColor;
             color: @white;
             opacity: 1;
+        }
+        &:active{
+            opacity: .7;
         }
         
     }
@@ -142,8 +158,12 @@
         color: @successColor;
         &:hover{
             background-color: @successColor;
+            border-color:@successColor;
             color: @white;
             opacity: 1;
+        }
+        &:active{
+            opacity: .7;
         }
     }
     .warning-plain{
@@ -155,6 +175,9 @@
             color: @white;
             opacity: 1;
         }
+        &:active{
+            opacity: .7;
+        }
     }
     .primary-plain{
         border-color: @primaryColor;
@@ -162,8 +185,12 @@
         color: @primaryColor;
         &:hover{
             background-color: @primaryColor;
+            border-color:@primaryColor;
             color: @white;
             opacity: 1;
+        }
+        &:active{
+            opacity: .7;
         }
     }
 

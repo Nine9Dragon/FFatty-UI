@@ -10,12 +10,12 @@
         props:{
             width:{
                 type:[String,Number],
-                default:300
+                default:"300px"
             }
         },
         computed:{
             siderWidth(){
-                return `width:${this.width}px`
+                return `width:${this.width}`
             }
         }
     }

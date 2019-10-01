@@ -21,7 +21,7 @@
         },
         computed:{
             layoutHeight(){
-                return `height:${this.height}px`
+                return `height:${this.height}`
             }
         },
         mounted(){

@@ -26,12 +26,12 @@
         <hr>
         <f-icon name="jiazai" color="#FAA" loading></f-icon>
         <hr>
-        <f-layout height="400">
-            <f-sider width="200">sider</f-sider>
+        <f-layout height="400px">
+            <f-sider>sider</f-sider>
             <f-layout>
-                <f-header>header</f-header>
+                <f-header height="100px">header</f-header>
                 <f-content>content</f-content>
-                <f-footer height="100">footer</f-footer>
+                <f-footer height="100px">footer</f-footer>
             </f-layout>
         </f-layout>
     </div>
