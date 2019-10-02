@@ -35,10 +35,10 @@
             </f-layout>
         </f-layout>
         <hr>
-        <f-input type="search" icon="mima"  placeholder="我带你们打" v-model="value"></f-input>
+        <!-- <f-input type="search" icon="mima"  placeholder="我带你们打" v-model="value"></f-input> -->
         <hr>
-        <f-radio name="sex" value="1" v-model="radio">aaa</f-radio>
-        <f-radio name="sex" value="2" v-model="radio" disabled>bbb</f-radio>
+        <f-radio name="sex" label="1" v-model="value">aaa</f-radio>
+        <f-radio name="sex" label="2" v-model="value">bbb</f-radio>
     </div>
 </template>
 
@@ -55,8 +55,8 @@
     export default {
         data(){
             return {
-                radio:'1',
-                value:''
+                value:'1',
+                // value:''
             }
         },
         components:{

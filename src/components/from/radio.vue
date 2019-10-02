@@ -1,11 +1,13 @@
 <template>
     <label class="box" >
         <input 
+        ref="radio"
         class="inpHidden"
         type="radio"
         :name="name"
-        :value="value"
+        :value="label"
         :disabled="disabled"
+        :checked="value===label"
         @input="$emit('input',$event.target.value)"
         @change="$emit('change',$event.target.value)"
         >
@@ -19,6 +21,7 @@
         name:"f-radio",
         props:{
             'name':String,
+            'label':String,
             'value':String,
             'disabled':{
                 type:Boolean,
