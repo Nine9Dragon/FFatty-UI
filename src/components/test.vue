@@ -34,6 +34,11 @@
                 <f-footer height="100px">footer</f-footer>
             </f-layout>
         </f-layout>
+        <hr>
+        <f-input type="search" icon="mima"  placeholder="我带你们打" v-model="value"></f-input>
+        <hr>
+        <f-radio name="sex" value="1" v-model="radio">aaa</f-radio>
+        <f-radio name="sex" value="2" v-model="radio" disabled>bbb</f-radio>
     </div>
 </template>
 
@@ -45,7 +50,15 @@
     import sContent from './Container/content'
     import sLayout from './Container/layout'
     import sSider from './Container/sider'
+    import sInput from './from/input'
+    import sRadio from './from/radio'
     export default {
+        data(){
+            return {
+                radio:'1',
+                value:''
+            }
+        },
         components:{
             "l-button":Button,
             "f-icon":Icon,
@@ -53,14 +66,16 @@
             "f-footer":sFooter,
             "f-content":sContent,
             "f-layout":sLayout,
-            "f-sider":sSider
+            "f-sider":sSider,
+            "f-input":sInput,
+            "f-radio":sRadio
         },
         methods:{
             aa(){
                 console.log("1");
             },
             change(){
-                console.log("222");
+                console.log(this.value);
             }
         }
     }
