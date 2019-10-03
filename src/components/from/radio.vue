@@ -7,7 +7,7 @@
         :name="name"
         :value="label"
         :disabled="disabled"
-        :checked="value===label"
+        :checked="values===label"
         @input="$emit('input',$event.target.value)"
         @change="$emit('change',$event.target.value)"
         >
@@ -22,15 +22,18 @@
         props:{
             'name':String,
             'label':String,
-            'value':String,
+            'values':String,
             'disabled':{
                 type:Boolean,
                 default:false
             }
         },
+        model:{
+            prop:'values'
+        },
         methods:{
             test(){
-                console.log(this.value)
+                console.log(this.values)
             }
         }
     }

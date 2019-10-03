@@ -37,12 +37,12 @@
         <hr>
         <!-- <f-input type="search" icon="mima"  placeholder="我带你们打" v-model="value"></f-input> -->
         <hr>
-        <!-- <f-radio name="sex" label="1" v-model="value">aaa</f-radio>
-        <f-radio name="sex" label="2" v-model="value">bbb</f-radio> -->
+        <f-radio name="sex" label="1" v-model="values">aaa</f-radio>
+        <f-radio name="sex" label="2" v-model="values">bbb</f-radio>
         <hr>
-        <f-checkbox label="1" v-model="value" name="1">aa</f-checkbox>
-        <f-checkbox label="2" v-model="value" name="1">bb</f-checkbox>
-        <f-checkbox label="3" v-model="value" name="1">cc</f-checkbox>
+        <f-checkbox label="1" v-model="checkList" name="1">aa</f-checkbox>
+        <f-checkbox label="2" v-model="checkList" name="1">bb</f-checkbox>
+        <f-checkbox label="3" v-model="checkList" name="1">cc</f-checkbox>
     </div>
 </template>
 
@@ -60,10 +60,10 @@
     export default {
         data(){
             return {
-                // value:'1',
-                // value:''
+                values:'1',
+                value:'',
                 // checkedList:'1'
-                value:[1,2]
+                checkList:[1,2]
             }
         },
         components:{
@@ -87,8 +87,8 @@
             }
         },
         watch:{
-            value(){
-                console.log(this.value)
+            checkList(){
+                console.log(this.checkList)
             }
         }
     }
@@ -96,8 +96,6 @@
 
 <style lang="less" scoped>
     div{
-        // width: 100%;
-        // height: 300px;
         background-color: #aaa;
     }
 </style>

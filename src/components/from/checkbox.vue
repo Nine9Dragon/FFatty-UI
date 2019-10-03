@@ -20,25 +20,29 @@
         props:{
             'name':String,
             'label':String,
-            'value':Array,
+            'checkList':Array,
         },
+        model:{
+            prop:'checkList'
+        }
+        ,
         methods:{
             change(){
-                this.$emit('change',this.value)
+                this.$emit('change',this.checkList)
             },
             input(){
                 if(this.isChecked){
-                    var a =  this.value.indexOf(this.label)
-                    this.value.splice(a,1);
-                    this.$emit('change',this.value)
+                    var a =  this.checkList.indexOf(this.label)
+                    this.checkList.splice(a,1);
+                    this.$emit('change',this.checkList)
                 }else{
-                    this.value.push(this.label)
+                    this.checkList.push(this.label)
                 }
             }
         },
         computed:{
             isChecked(){
-                for(var key of this.value){
+                for(var key of this.checkList){
                     if(key==this.label){
                         return true
                     }
