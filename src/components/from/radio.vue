@@ -11,7 +11,7 @@
         @input="$emit('input',$event.target.value)"
         @change="$emit('change',$event.target.value)"
         >
-        <span class="radio" :class="{disabled}"></span>
+        <span class="radio" :class="{disabled}" @click="test"></span>
         <slot></slot>    
     </label>
 </template>
@@ -28,6 +28,11 @@
                 default:false
             }
         },
+        methods:{
+            test(){
+                console.log(this.value)
+            }
+        }
     }
 </script>
 
@@ -42,6 +47,7 @@
         // border: 2px solid #FFF;
         border-radius:100%;
         background: #FFF;
+        transition: all .3s linear;
     }
     .inpHidden:checked + .radio{
         background: #00a1e9;

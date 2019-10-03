@@ -37,8 +37,12 @@
         <hr>
         <!-- <f-input type="search" icon="mima"  placeholder="我带你们打" v-model="value"></f-input> -->
         <hr>
-        <f-radio name="sex" label="1" v-model="value">aaa</f-radio>
-        <f-radio name="sex" label="2" v-model="value">bbb</f-radio>
+        <!-- <f-radio name="sex" label="1" v-model="value">aaa</f-radio>
+        <f-radio name="sex" label="2" v-model="value">bbb</f-radio> -->
+        <hr>
+        <f-checkbox label="1" v-model="value" name="1">aa</f-checkbox>
+        <f-checkbox label="2" v-model="value" name="1">bb</f-checkbox>
+        <f-checkbox label="3" v-model="value" name="1">cc</f-checkbox>
     </div>
 </template>
 
@@ -52,11 +56,14 @@
     import sSider from './Container/sider'
     import sInput from './from/input'
     import sRadio from './from/radio'
+    import fCheckbox from './from/checkbox'
     export default {
         data(){
             return {
-                value:'1',
+                // value:'1',
                 // value:''
+                // checkedList:'1'
+                value:[1,2]
             }
         },
         components:{
@@ -68,7 +75,8 @@
             "f-layout":sLayout,
             "f-sider":sSider,
             "f-input":sInput,
-            "f-radio":sRadio
+            "f-radio":sRadio,
+            'f-checkbox':fCheckbox
         },
         methods:{
             aa(){
@@ -76,6 +84,11 @@
             },
             change(){
                 console.log(this.value);
+            }
+        },
+        watch:{
+            value(){
+                console.log(this.value)
             }
         }
     }
