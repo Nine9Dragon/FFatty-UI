@@ -35,7 +35,7 @@
             </f-layout>
         </f-layout>
         <hr>
-        <!-- <f-input type="search" icon="mima"  placeholder="我带你们打" v-model="value"></f-input> -->
+        <f-input type="search" icon="mima"  placeholder="我带你们打" v-model="value"></f-input>
         <hr>
         <f-radio name="sex" label="1" v-model="values">aaa</f-radio>
         <f-radio name="sex" label="2" v-model="values">bbb</f-radio>
@@ -43,6 +43,8 @@
         <f-checkbox label="1" v-model="checkList" name="1">aa</f-checkbox>
         <f-checkbox label="2" v-model="checkList" name="1">bb</f-checkbox>
         <f-checkbox label="3" v-model="checkList" name="1">cc</f-checkbox>
+        <hr>
+        <f-cascader :options = "options" :selected.sync="selected"></f-cascader>
     </div>
 </template>
 
@@ -57,13 +59,56 @@
     import sInput from './from/input'
     import sRadio from './from/radio'
     import fCheckbox from './from/checkbox'
+    import fCascader from './cascader/cascader'
+    import fCascaderItem from './cascader/cascader-item'
     export default {
         data(){
             return {
                 values:'1',
                 value:'',
-                // checkedList:'1'
-                checkList:[1,2]
+                checkList:[1,2],
+                selected:[],
+                options:[{
+                    label: '美国',
+                    children: [
+                    {
+                        label: '德克萨斯',
+                        children: [
+                            { label: '休斯顿' },
+                            { label: '达拉斯' }
+                        ]
+                    }
+                    ]
+                },
+                {
+                    label: '中国',
+                    children: [
+                    {
+                        label: '广东',
+                        children: [
+                            { label: '汕头' },
+                            { label: '揭阳' }
+                        ]
+                    },
+                    {
+                        label: '江苏',
+                        children: [
+                            { label: '苏州' },
+                            { label: '南京' }
+                        ]
+                    },
+                    {
+                        label: '云南',
+                        children: [
+                            { label: '大理' },
+                            { label: '丽江' },
+                            { label: '香格里拉' },
+                            { label: '西双版纳' }
+                        ]
+                    }
+                    ]
+                }
+                ]
             }
         },
         components:{
@@ -76,7 +121,9 @@
             "f-sider":sSider,
             "f-input":sInput,
             "f-radio":sRadio,
-            'f-checkbox':fCheckbox
+            'f-checkbox':fCheckbox,
+            'f-cascader':fCascader,
+            'f-cascader-item':fCascaderItem
         },
         methods:{
             aa(){
