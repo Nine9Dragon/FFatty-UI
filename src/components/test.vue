@@ -45,6 +45,38 @@
         <f-checkbox label="3" v-model="checkList" name="1">cc</f-checkbox>
         <hr>
         <f-cascader :options = "options" :selected.sync="selected"></f-cascader>
+        <hr>
+        <f-tab v-model="selected">
+            <f-tab-head>
+                <f-tab-item name="x" disabled>源氏</f-tab-item>
+                <f-tab-item name="bee">
+                桐壶更
+                </f-tab-item>
+                <f-tab-item name="flower">
+                若紫
+
+                </f-tab-item>
+                <f-tab-item name="grass">
+                葵姬
+                
+                </f-tab-item>
+                <f-tab-item name="herb">
+                夕颜
+
+                </f-tab-item>
+                <f-tab-item name="tree">
+                明石姬
+                </f-tab-item>
+            </f-tab-head>
+            <f-tab-body>
+                <f-tab-pane name="x"></f-tab-pane>
+                <f-tab-pane name="bee">紫式部小说《源氏物语》中的角色。她是书中主角光源氏的母亲，也是桐壶帝的宠妃。她的父亲是按察大纳言，母亲则是拥有皇族血统的女子。</f-tab-pane>
+                <f-tab-pane name="flower">也叫做紫儿、若紫，日本国宝级古典名著《源氏物语》中的女主角，是一位美丽温顺的女子，兵部卿宫的私生女，藤壶中宫的侄女。光源氏第一任正妻葵之上过世后，在实质上是光源氏的正室，后来在六条院里是春之町的女主人。</f-tab-pane>
+                <f-tab-pane name="grass">其夫为源氏，其子夕雾。葵端庄温柔，款款大方，相貌出众，气质高贵。产后因遭阴物袭击，当场身亡。</f-tab-pane>
+                <f-tab-pane name="herb">夕颜的名字是源自于以她为主角的夕颜一帖，文中对此女以夕颜花来形容，因此得名。夕颜是源氏的情人之一，也是头中将的情人，是玉鬘的母亲。</f-tab-pane>
+                <f-tab-pane name="tree">日本古典名著《源氏物语》中的人物，是光源氏的侧室，明石中宫的生母。</f-tab-pane>
+            </f-tab-body>
+            </f-tab>
     </div>
 </template>
 
@@ -61,6 +93,11 @@
     import fCheckbox from './from/checkbox'
     import fCascader from './cascader/cascader'
     import fCascaderItem from './cascader/cascader-item'
+    import fTab from './tab/tab'
+    import fTabHead from './tab/tab-head'
+    import fTabItem from './tab/tab-item'
+    import fTabBody from './tab/tab-body'
+    import fTabPane from './tab/tab-pane'
     export default {
         data(){
             return {
@@ -123,7 +160,12 @@
             "f-radio":sRadio,
             'f-checkbox':fCheckbox,
             'f-cascader':fCascader,
-            'f-cascader-item':fCascaderItem
+            'f-cascader-item':fCascaderItem,
+            'f-tab':fTab,
+            'f-tab-head':fTabHead,
+            'f-tab-item':fTabItem,
+            'f-tab-body':fTabBody,
+            'f-tab-pane':fTabPane,
         },
         methods:{
             aa(){
