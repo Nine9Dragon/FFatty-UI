@@ -2,8 +2,8 @@
     <div class="f-tab-head" :class="headClass" ref="tabHead">
         <div class="item-wrapper" :class="itemWrapperClass">
             <slot></slot>
-        </div>
         <div class="line" :style="lineStyle" ref="line"></div>
+        </div>
     </div>
 </template>
 
@@ -17,8 +17,9 @@
         },
         inject:['eventBus'],
         computed:{
-            handClass(){
+            headClass(){
                 let headDirection = this.align ==='top'?'column':'row'
+                console.log(headDirection)
                 return `head-in-${headDirection}`
             },
             itemWrapperClass () {
@@ -44,8 +45,16 @@
         mounted(){
             this.eventBus.$on('update:selected',(name,vm)=>{
                 this.$nextTick(()=>{
+                    // console.log(vm.$refs.item.getBoundingClientRect())
+                    var vms = vm.$refs.item
+                    vms = vms.getBoundingClientRect();
+                    // console.log(vms)
                     let tabHeadStyle = this.$refs.tabHead.getBoundingClientRect();
-                    let {width,left,height,top} = vm.$refs.item.getBoundingClientRect();
+                    console.log(tabHeadStyle)
+                    let {width,left,height,top} = vms;
+                    // console.log(width,left,height,top)
+                    var lefts = left - tabHeadStyle.left;
+                    console.log(lefts)
                     if(this.align === 'top'){
                         this.$refs.line.style.width = `${width}px`
                         this.$refs.line.style.left = `${left - tabHeadStyle.left}px`
@@ -62,6 +71,9 @@
 <style lang="less" scoped>
     .f-tab-head{
         display: flex;
+        position: relative;
+        text-align: center;
+        margin: 0 auto;
 
         &.head-in-row{
             flex-direction: row;
@@ -73,6 +85,7 @@
         }
         .item-wrapper{
             display: flex;
+            position: relative;
             &.item-in-row{
                 flex-direction: row;
             }
@@ -81,7 +94,7 @@
             }
         }
         .line{
-            position: relative;
+            position: absolute;
             transition: all .4s linear;
         }
         

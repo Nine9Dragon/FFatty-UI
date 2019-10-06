@@ -13,6 +13,10 @@
                 eventBus:new Vue()
             }
         },
+        model:{
+            prop:'selecteds'
+        }
+        ,
         props:{
             value:{
                 type:String

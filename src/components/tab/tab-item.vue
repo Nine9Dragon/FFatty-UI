@@ -18,8 +18,8 @@
         },
         data(){
             return {
-                active:false,
-                disabled:false
+                active:false
+                // disabled:false
             }
         },
         created(){
