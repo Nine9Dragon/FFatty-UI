@@ -6,6 +6,7 @@
         :name="name"
         :value="label"
         :checked="isChecked"
+        :dusabled="disabled"
         @input="input"
         @change="change"
         >
@@ -21,6 +22,7 @@
             'name':String,
             'label':String,
             'checkList':Array,
+            'disabled':Boolean
         },
         model:{
             prop:'checkList'
