@@ -1,28 +1,28 @@
 <template>
     <div>
-        <l-button>defalut</l-button>
-        <l-button type="primary" >primary</l-button>
-        <l-button type="success" >success</l-button>
-        <l-button type="danger" >danger</l-button>
-        <l-button type="warning"  >warning</l-button>
+        <f-button>defalut</f-button>
+        <f-button type="primary" >primary</f-button>
+        <f-button type="success" >success</f-button>
+        <f-button type="danger" >danger</f-button>
+        <f-button type="warning"  >warning</f-button>
         <hr>
-        <l-button plain @click.native="aa">defalut</l-button>
-        <l-button type="primary" plain>primary</l-button>
-        <l-button type="success" plain>success</l-button>
-        <l-button type="danger" plain>danger</l-button>
-        <l-button type="warning" plain >warning</l-button>
+        <f-button plain @click.native="aa">defalut</f-button>
+        <f-button type="primary" plain>primary</f-button>
+        <f-button type="success" plain>success</f-button>
+        <f-button type="danger" plain>danger</f-button>
+        <f-button type="warning" plain >warning</f-button>
         <hr>
-        <l-button round>defalut</l-button>
-        <l-button type="primary" round>primary</l-button>
-        <l-button type="success" round>success</l-button>
-        <l-button type="danger" round icon="mima" iconPositon="right">danger</l-button>
-        <l-button icon="jiazai" loading type="warning"  round @click="change" iconPositon="right">warning</l-button>
+        <f-button round>defalut</f-button>
+        <f-button type="primary" round>primary</f-button>
+        <f-button type="success" round>success</f-button>
+        <f-button type="danger" round icon="mima" iconPositon="right">danger</f-button>
+        <f-button icon="jiazai" loading type="warning"  round @click="change" iconPositon="right">warning</f-button>
         <hr>
-        <l-button disabled>defalut</l-button>
-        <l-button type="primary" disabled>primary</l-button>
-        <l-button type="success" disabled>success</l-button>
-        <l-button type="danger" disabled>danger</l-button>
-        <l-button type="warning"  disabled>warning</l-button>
+        <f-button disabled>defalut</f-button>
+        <f-button type="primary" disabled>primary</f-button>
+        <f-button type="success" disabled>success</f-button>
+        <f-button type="danger" disabled>danger</f-button>
+        <f-button type="warning"  disabled>warning</f-button>
         <hr>
         <f-icon name="jiazai" color="#FAA" loading></f-icon>
         <hr>
@@ -142,7 +142,7 @@
             }
         },
         components:{
-            "l-button":Button,
+            "f-button":Button,
             "f-icon":Icon,
             "f-header":sHeader,
             "f-footer":sFooter,
