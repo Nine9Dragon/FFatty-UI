@@ -68,6 +68,20 @@
             </f-tab-body>
             </f-tab>
         </div>
+        <f-collapse v-model="selected1" accordion style="width:600px">
+            <f-collapse-item title="香蕉 Banana" name="1">
+                <div>香蕉是淀粉质丰富的有益水果。</div>
+            </f-collapse-item>
+            <f-collapse-item title="菠萝 Pineapple" name="2">
+                <div>菠萝果实品质优良，营养丰富，含有大量的果糖，葡萄糖，维生素B、C，磷，柠檬酸和蛋白酶等物质。</div>
+            </f-collapse-item>
+            <f-collapse-item title="葡萄 Grape" name="3">
+                <div>成熟的浆果中葡萄含糖量高达10%-30%，以葡萄糖为主。</div>
+            </f-collapse-item>
+            <f-collapse-item title="柠檬 Lemon" name="4">
+                <div>柠檬富含维生素C、糖类、钙、磷、铁、维生素B1、维生素B2、烟酸、奎宁酸、柠檬酸、苹果酸、橙皮苷、柚皮苷、香豆精、高量钾元素和低量钠元素等，对人体十分有益。</div>
+            </f-collapse-item>
+        </f-collapse>
         
     </div>
 </template>
@@ -90,6 +104,8 @@
     import fTabItem from './tab/tab-item'
     import fTabBody from './tab/tab-body'
     import fTabPane from './tab/tab-pane'
+    import fCollapse from './collapse/collapse'
+    import fCollapseItem from './collapse/collapse-item'
     export default {
         data(){
             return {
@@ -159,6 +175,8 @@
             'f-tab-item':fTabItem,
             'f-tab-body':fTabBody,
             'f-tab-pane':fTabPane,
+            'f-collapse':fCollapse,
+            'f-collapse-item':fCollapseItem
         },
         methods:{
             aa(){
